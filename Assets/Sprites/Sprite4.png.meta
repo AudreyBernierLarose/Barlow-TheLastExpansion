@@ -40,7 +40,7 @@ TextureImporter:
     second: Liana_60
   - first:
       213: 21300024
-    second: Sprite4_12
+    second: Rock_62
   - first:
       213: 21300026
     second: Bg_62
@@ -58,13 +58,13 @@ TextureImporter:
     second: Bg_6
   - first:
       213: 21300036
-    second: Sprite4_18
+    second: Rock_63
   - first:
       213: 21300038
-    second: Sprite4_19
+    second: Rock_64
   - first:
       213: 21300040
-    second: Sprite4_20
+    second: Rock_65
   - first:
       213: 21300042
     second: Grass_64
@@ -498,7 +498,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite4_12
+      name: Rock_62
       rect:
         serializedVersion: 2
         x: 3213
@@ -624,7 +624,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite4_18
+      name: Rock_63
       rect:
         serializedVersion: 2
         x: 3201
@@ -645,7 +645,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite4_19
+      name: Rock_64
       rect:
         serializedVersion: 2
         x: 4331
@@ -666,7 +666,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite4_20
+      name: Rock_65
       rect:
         serializedVersion: 2
         x: 3871
