@@ -15,35 +15,30 @@ public class CameraControllerWithBuffer : MonoBehaviour
     {
         //Check the X Threshold 
         if (player.position.x < transform.position.x - (0.5f * cameraOffsetX)) //Left
-        {
             transform.position = new Vector3(
                 player.position.x + (0.5f * cameraOffsetX), 
                 transform.position.y, 
                 transform.position.z);
-        }
+       
         else if (player.position.x > transform.position.x + (0.5f * cameraOffsetX)) //Right
-        {
             transform.position = new Vector3(
                 player.position.x - (0.5f * cameraOffsetX), 
                 transform.position.y, 
                 transform.position.z);
-        }
+        
 
         //Check the Y Threshold
-        if (player.position.y < transform.position.y - (0.5f * cameraOffsetY)) // Down
-        {
+        if (player.position.y < transform.position.y - (0.5f * cameraOffsetY)) //Down
             transform.position = new Vector3(
                 transform.position.x,
                 player.position.y + (0.5f * cameraOffsetY),
                 transform.position.z);
-        }
-        else if (player.position.y > transform.position.y + (0.5f * cameraOffsetY)) // Up
-        {
+        
+        else if (player.position.y > transform.position.y + (0.5f * cameraOffsetY)) //Up
             transform.position = new Vector3(
                 transform.position.x, 
                 player.position.y - (0.5f * cameraOffsetY), 
                 transform.position.z);
-        }
     }
 
     void OnDrawGizmos()
