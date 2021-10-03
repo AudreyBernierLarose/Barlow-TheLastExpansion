@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     {
         anim.SetBool("isJumping", isJumping);
         Jump();
-
+        Gliding();
     }
 
     private void FixedUpdate()
@@ -47,8 +47,6 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("xVelocity", Mathf.Abs(rBody.velocity.x));
         anim.SetBool("isGrounded", isGrounded);
         anim.SetBool("isCrouching", isCrouching);
-
-        
 
         //Character movements
         Flip();
@@ -77,7 +75,7 @@ public class PlayerController : MonoBehaviour
 
     private void Crouch()
     {
-        if (Input.GetKey(KeyCode.LeftControl) && isGrounded)
+        if (Input.GetKey(KeyCode.C) && isGrounded)
         {
             anim.SetBool("isCrouching", !isCrouching);
             rBody.velocity = new Vector2(0.0f, 0.0f);
@@ -119,6 +117,22 @@ public class PlayerController : MonoBehaviour
                     canDoubleJump = false;
                 }
             }
+        }
+    }
+
+    private void Gliding()
+    {
+        if (isGrounded)
+        {
+            rBody.gravityScale = 3f;
+            rBody.angularDrag = 0.05f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.F) && !isGrounded && (rBody.velocity.y < 0 || rBody.velocity.y > 0))
+        {
+                rBody.angularDrag = 2f;
+                rBody.gravityScale = 0.3f;
+                rBody.velocity = new Vector2(rBody.velocity.x, -2f); 
         }
     }
 }
