@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     private bool isCrouching;
     private Animator anim;
-    private int jumpCount;
     private bool isJumping;
     private float initialSpeed = 4.0f;
     private bool canDoubleJump;
