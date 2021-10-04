@@ -45,8 +45,12 @@ public class PlayerController : MonoBehaviour
 
         //Communicate with the animator
         anim.SetFloat("xVelocity", Mathf.Abs(rBody.velocity.x));
+        anim.SetFloat("yVelocity", rBody.velocity.y);
         anim.SetBool("isGrounded", isGrounded);
         anim.SetBool("isCrouching", isCrouching);
+        anim.SetFloat("crouching", Input.GetAxis("Crouch"));
+
+        Debug.Log("Crouch Input get axis" + Input.GetAxis("Crouch"));
 
         //Character movements
         Flip();
@@ -61,7 +65,7 @@ public class PlayerController : MonoBehaviour
 
     private void Run()
     {
-        if ((Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.D)) && isGrounded || (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.A)) && isGrounded)
+        if ((Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.D)) && isGrounded || (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.A)) && isGrounded || Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.RightArrow))
         {
             speed = runSpeed;
             anim.SetFloat("xVelocity", Mathf.Abs(rBody.velocity.x));
@@ -74,11 +78,12 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Crouch()
-    {
+    { 
         if (Input.GetKey(KeyCode.C) && isGrounded)
         {
-            anim.SetBool("isCrouching", !isCrouching);
-            rBody.velocity = new Vector2(0.0f, 0.0f);
+                anim.SetBool("isCrouching", !isCrouching);
+                anim.SetFloat("crouching", -1f);
+                rBody.velocity = new Vector2(0.0f, 0.0f);
         }
     }
 
@@ -101,7 +106,7 @@ public class PlayerController : MonoBehaviour
             canDoubleJump = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
             if (isGrounded)
             {
@@ -110,12 +115,13 @@ public class PlayerController : MonoBehaviour
             }
             else 
             {
-                if (canDoubleJump)
-                {
-                    isJumping = true;
-                    rBody.velocity = Vector2.up * 10f;
-                    canDoubleJump = false;
-                }
+                if(Input.GetKeyDown(KeyCode.Space))
+                    if (canDoubleJump)
+                    {
+                        isJumping = true;
+                        rBody.velocity = Vector2.up * 10f;
+                        canDoubleJump = false;
+                    }
             }
         }
     }
@@ -130,9 +136,9 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F) && !isGrounded && (rBody.velocity.y < 0 || rBody.velocity.y > 0))
         {
-                rBody.angularDrag = 2f;
-                rBody.gravityScale = 0.3f;
-                rBody.velocity = new Vector2(rBody.velocity.x, -2f); 
+            rBody.angularDrag = 2f;
+            rBody.gravityScale = 0.3f;
+            rBody.velocity = new Vector2(rBody.velocity.x, -2f);
         }
     }
 }

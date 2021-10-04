@@ -8,8 +8,8 @@ public class CoinCollection : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            Score.scoreValue += 1;
             Destroy(this.gameObject);
-            //Only missing the adding points to the board
         }
     }
 }
