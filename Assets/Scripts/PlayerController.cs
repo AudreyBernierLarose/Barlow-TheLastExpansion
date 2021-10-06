@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float groundCheckRadius;
     [SerializeField] private Transform groundCheckPos;
     [SerializeField] private LayerMask whatIsGround;
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -73,17 +73,17 @@ public class PlayerController : MonoBehaviour
         else
         {
             speed = initialSpeed;
-            anim.SetFloat("xVelocity", Mathf.Abs(rBody.velocity.x));   
+            anim.SetFloat("xVelocity", Mathf.Abs(rBody.velocity.x));
         }
     }
 
     private void Crouch()
-    { 
+    {
         if (Input.GetKey(KeyCode.C) && isGrounded)
         {
-                anim.SetBool("isCrouching", !isCrouching);
-                anim.SetFloat("crouching", -1f);
-                rBody.velocity = new Vector2(0.0f, 0.0f);
+            anim.SetBool("isCrouching", !isCrouching);
+            anim.SetFloat("crouching", -1f);
+            rBody.velocity = new Vector2(0.0f, 0.0f);
         }
     }
 
@@ -113,9 +113,9 @@ public class PlayerController : MonoBehaviour
                 isJumping = true;
                 rBody.velocity = Vector2.up * 10f;
             }
-            else 
+            else
             {
-                if(Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKeyDown(KeyCode.Space))
                     if (canDoubleJump)
                     {
                         isJumping = true;
