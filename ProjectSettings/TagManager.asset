@@ -9,6 +9,7 @@ TagManager:
   - Hurtbox
   - Enemy
   - Slide
+  - Star
   layers:
   - Default
   - TransparentFX
