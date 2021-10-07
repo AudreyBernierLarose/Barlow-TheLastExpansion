@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Stomper : MonoBehaviour
 {
-    public int damageToDeal;
+    [SerializeField] private int damageToDeal;
+    [SerializeField] private float bounceForce;
 
     private Rigidbody2D rBody;
-    public float bounceForce;
 
     // Start is called before the first frame update
     void Start()

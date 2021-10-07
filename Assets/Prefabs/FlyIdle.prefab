@@ -1,35 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6924965248855244991
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6924965248855244990}
-  m_Layer: 0
-  m_Name: ContactCheck
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6924965248855244990
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6924965248855244991}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6924965249938904950}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6924965249725797294
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,11 +26,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6924965249725797294}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.567876, y: -0.3265597, z: -1625.7207}
+  m_LocalPosition: {x: 0.567876, y: -0.121, z: -1625.7207}
   m_LocalScale: {x: 2.2496781, y: 2.2496781, z: 2.2496781}
   m_Children: []
   m_Father: {fileID: 6924965249938904950}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6924965249725797291
 MonoBehaviour:
@@ -88,8 +58,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.37383023, y: 0.011476517}
-  m_Size: {x: 0.5999426, y: 0.32776907}
+  m_Offset: {x: -0.3777494, y: 0.14383459}
+  m_Size: {x: 0.8147218, y: 0.06305352}
   m_Direction: 1
 --- !u!1 &6924965249938904951
 GameObject:
@@ -123,8 +93,8 @@ Transform:
   m_LocalPosition: {x: -2.4405, y: -1.9285, z: 0}
   m_LocalScale: {x: 0.44450808, y: 0.44450808, z: 0.44450808}
   m_Children:
-  - {fileID: 6924965248855244990}
   - {fileID: 6924965249725797289}
+  - {fileID: 1036012139629894113}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -227,8 +197,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.26272503, y: -0.290731}
-  m_Size: {x: 1.3759078, y: 0.8017974}
+  m_Offset: {x: -0.26272497, y: 0.045722354}
+  m_Size: {x: 1.3759079, y: 0.12889203}
   m_Direction: 1
 --- !u!50 &2444845084480490092
 Rigidbody2D:
@@ -238,7 +208,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6924965249938904951}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -251,3 +221,50 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &8601318922055112280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1036012139629894113}
+  - component: {fileID: 2470942226593578503}
+  m_Layer: 0
+  m_Name: DamageDealer
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1036012139629894113
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8601318922055112280}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.2496781, y: 2.2496781, z: 2.2496781}
+  m_Children: []
+  m_Father: {fileID: 6924965249938904950}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &2470942226593578503
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8601318922055112280}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.085843556, y: -0.18958206}
+  m_Size: {x: 0.5332725, y: 0.24410897}
+  m_Direction: 1
