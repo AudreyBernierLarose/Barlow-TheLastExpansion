@@ -141,4 +141,9 @@ public class PlayerController : MonoBehaviour
             rBody.velocity = new Vector2(rBody.velocity.x, -2f);
         }
     }
+
+    public void Sliding()
+    {
+        rBody.velocity = new Vector2(speed * 6f, rBody.velocity.y);
+    }
 }

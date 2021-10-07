@@ -8,6 +8,7 @@ TagManager:
   - Coin
   - Hurtbox
   - Enemy
+  - Slide
   layers:
   - Default
   - TransparentFX
