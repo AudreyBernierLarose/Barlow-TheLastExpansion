@@ -8,7 +8,7 @@ public class CameraTrigger : MonoBehaviour
     //Serialized Fields
     [SerializeField] private GameObject cameraToActivate;
     [SerializeField] private GameObject cameraOut;
-    [SerializeField] private Collider2D confinerOut;
+    [SerializeField] private Collider2D confinerIn;
 
     public VirtualCameraController vCamController;
 
@@ -32,7 +32,7 @@ public class CameraTrigger : MonoBehaviour
         {
             vCamController.TransitionTo(cameraOut);
             cameraOut.GetComponent<CinemachineConfiner>().InvalidatePathCache();
-            cameraOut.GetComponent<CinemachineConfiner>().m_BoundingShape2D = confinerOut;
+            cameraOut.GetComponent<CinemachineConfiner>().m_BoundingShape2D = confinerIn;
         }
             
     }
