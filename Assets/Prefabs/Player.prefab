@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageToDeal: 1
-  bounceForce: 15
+  bounceForce: 12
 --- !u!1 &1879881092473460496
 GameObject:
   m_ObjectHideFlags: 0

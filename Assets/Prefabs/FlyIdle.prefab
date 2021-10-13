@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6924965249725797289}
-  - component: {fileID: 6924965249725797291}
   - component: {fileID: 6924965249725797288}
+  - component: {fileID: 4162833434039167922}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Hurtbox
@@ -32,19 +32,6 @@ Transform:
   m_Father: {fileID: 6924965249938904950}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6924965249725797291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6924965249725797294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f78aac5f81c060048880bd3aa082766d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyHP: 1
 --- !u!70 &6924965249725797288
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -61,6 +48,19 @@ CapsuleCollider2D:
   m_Offset: {x: -0.3777494, y: 0.14383459}
   m_Size: {x: 0.8147218, y: 0.06305352}
   m_Direction: 1
+--- !u!114 &4162833434039167922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6924965249725797294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f78aac5f81c060048880bd3aa082766d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHP: 1
 --- !u!1 &6924965249938904951
 GameObject:
   m_ObjectHideFlags: 0
