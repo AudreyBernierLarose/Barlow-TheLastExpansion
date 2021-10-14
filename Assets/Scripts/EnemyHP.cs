@@ -7,7 +7,6 @@ public class EnemyHP : MonoBehaviour
     [SerializeField] private int enemyHP;
 
     private Animator anim;
-    private GameObject fly;
     private Collider2D col;
     private GameObject damageCol;
     private Collider2D damCol;
