@@ -21,10 +21,4 @@ public class PlayerHP : MonoBehaviour
     {
         rBody = GetComponent<Rigidbody2D>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -8,11 +8,13 @@ public class Stomper : MonoBehaviour
     [SerializeField] private float bounceForce;
 
     private Rigidbody2D rBody;
+    private Collider2D col;
 
     // Start is called before the first frame update
     void Start()
     {
         rBody = transform.parent.GetComponent<Rigidbody2D>(); //Get the component of the parent object
+        col = GetComponent<Collider2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
