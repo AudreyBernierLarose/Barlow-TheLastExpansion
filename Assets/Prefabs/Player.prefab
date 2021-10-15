@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1612622937803548512}
   - component: {fileID: 2664226017452276246}
   - component: {fileID: 3937473702910894972}
+  - component: {fileID: 1202239719011615847}
   m_Layer: 0
   m_Name: Stomper
   m_TagString: Untagged
@@ -72,6 +73,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageToDeal: 1
   bounceForce: 14
+--- !u!114 &1202239719011615847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264106620313513625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d18cbebc7e0ec694caa1ec146ce2e1ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounceForce: 30
 --- !u!1 &1879881092473460496
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +300,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: dac82a03a88cee742a40f9fc08439d1d, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 1

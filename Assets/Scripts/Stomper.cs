@@ -21,8 +21,8 @@ public class Stomper : MonoBehaviour
     {
         if (other.gameObject.tag == "Hurtbox")
         {
-            other.gameObject.GetComponent<EnemyHP>().TakeDamage(damageToDeal); //this gets the enemy script
-            rBody.AddForce(transform.up * bounceForce, ForceMode2D.Impulse);
+                other.gameObject.GetComponent<EnemyHP>().TakeDamage(damageToDeal); //this gets the enemy script
+                rBody.AddForce(transform.up * bounceForce, ForceMode2D.Impulse);  
         }
     }
 }

@@ -18,6 +18,6 @@ public class StarScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        starText.text = "Stars: " + starPoints;
+        starText.text = "X " + starPoints;
     }
 }
