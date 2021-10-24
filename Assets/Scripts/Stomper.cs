@@ -19,10 +19,12 @@ public class Stomper : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+
         if (other.gameObject.tag == "Hurtbox")
         {
                 other.gameObject.GetComponent<EnemyHP>().TakeDamage(damageToDeal); //this gets the enemy script
-                rBody.AddForce(transform.up * bounceForce, ForceMode2D.Impulse);  
+            rBody.velocity = new Vector3(rBody.velocity.x, rBody.velocity.y * 0.0f + bounceForce, 0.0f);
+            
         }
     }
 }

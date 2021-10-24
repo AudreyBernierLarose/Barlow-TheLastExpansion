@@ -130,12 +130,14 @@ public class PlayerController : MonoBehaviour
     {
         if (isGrounded)
         {
+            anim.SetBool("isFloating", false);
             rBody.gravityScale = 3f;
             rBody.angularDrag = 0.05f;
         }
 
         if (Input.GetKeyDown(KeyCode.F) && !isGrounded && (rBody.velocity.y < 0 || rBody.velocity.y > 0))
         {
+            anim.SetBool("isFloating", true);
             rBody.angularDrag = 2f;
             rBody.gravityScale = 0.3f;
             rBody.velocity = new Vector2(rBody.velocity.x, -2f);
