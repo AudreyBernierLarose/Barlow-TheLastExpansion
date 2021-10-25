@@ -7,6 +7,7 @@ public class BugSpawner : MonoBehaviour
     [SerializeField] private GameObject spawn;
     [SerializeField] private float x, y;
     [SerializeField] private float setTimer;
+    [SerializeField] private float bugTimer;
 
     private float timer = 0.0f;
 
@@ -17,7 +18,7 @@ public class BugSpawner : MonoBehaviour
         if (timer > setTimer)
         {
             timer = 0;
-            Instantiate(spawn, new Vector3(x, y, 0), Quaternion.identity);
+            Destroy(Instantiate(spawn, new Vector3(x, y, 0), Quaternion.identity), bugTimer);
         }
     }
 }

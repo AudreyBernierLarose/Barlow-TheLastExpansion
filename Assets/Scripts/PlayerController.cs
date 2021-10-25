@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
 
     private void Run()
     {
-        if ((Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.D)) && isGrounded || (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.A)) && isGrounded || Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.RightArrow))
         {
             speed = runSpeed;
             anim.SetFloat("xVelocity", Mathf.Abs(rBody.velocity.x));
@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
 
     private void Crouch()
     {
-        if (Input.GetKey(KeyCode.C) && isGrounded)
+        if (Input.GetKey(KeyCode.DownArrow) && isGrounded)
         {
             anim.SetBool("isCrouching", !isCrouching);
             anim.SetFloat("crouching", -1f);

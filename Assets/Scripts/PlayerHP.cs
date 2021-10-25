@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHP : MonoBehaviour
 {
@@ -9,28 +10,44 @@ public class PlayerHP : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private float invisibleDuration = 2.0f;
 
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Enemy")
         {
-            if (Score.scoreValue >= 1)
+            if (HPScript.hpScore >= 1)
             {
                 SetInvinsibility();
                 rBody.velocity = Vector2.down * 1f; //This is for the flies
                 Score.scoreValue--;
+                HPScript.hpScore--;
             }
             else
             {
                 //Trigger Death animation here
-                rBody.velocity = Vector2.down * 1f;
-                Score.scoreValue--;
-            }
+                rBody.velocity = Vector2.down * 1f; //This is for the flies
+                HPScript.hpScore -= HPScript.hpScore;
+            }               
         }
 
         if (other.gameObject.tag == "Lava")
         {
-            SetInvinsibility();
-            Score.scoreValue--;
+            if (HPScript.hpScore >= 1)
+            {
+                SetInvinsibility();
+                Score.scoreValue--;
+                HPScript.hpScore--;
+            }
+            else 
+            {
+                //Trigger Death animation here
+                HPScript.hpScore -= HPScript.hpScore;
+            }
+        }
+
+        if (other.gameObject.tag == "Death")
+        {
+            HPScript.hpScore -= HPScript.hpScore;
+            Destroy(this.gameObject);
         }
     }
 

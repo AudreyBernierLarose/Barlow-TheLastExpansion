@@ -13,6 +13,7 @@ TagManager:
   - Bounce
   - Platform
   - Lava
+  - Death
   layers:
   - Default
   - TransparentFX

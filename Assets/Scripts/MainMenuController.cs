@@ -7,6 +7,9 @@ public class MainMenuController : MonoBehaviour
 {
     public void StartGame()
     {
+        HPScript.hpScore = 5;
+        Score.scoreValue = 0;
+        StarScript.starPoints = 0;
         //Can use this function everytime you wanna go to the next scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);   
     }
@@ -22,6 +25,11 @@ public class MainMenuController : MonoBehaviour
     public void Back()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
+    public void Main()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - SceneManager.GetActiveScene().buildIndex);
     }
 
     public void QuitGame()
