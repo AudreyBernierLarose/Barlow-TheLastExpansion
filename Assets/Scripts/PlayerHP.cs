@@ -16,7 +16,7 @@ public class PlayerHP : MonoBehaviour
             if (Score.scoreValue >= 1)
             {
                 SetInvinsibility();
-                rBody.velocity = Vector2.down * 1f;
+                rBody.velocity = Vector2.down * 1f; //This is for the flies
                 Score.scoreValue--;
             }
             else
@@ -25,6 +25,12 @@ public class PlayerHP : MonoBehaviour
                 rBody.velocity = Vector2.down * 1f;
                 Score.scoreValue--;
             }
+        }
+
+        if (other.gameObject.tag == "Lava")
+        {
+            SetInvinsibility();
+            Score.scoreValue--;
         }
     }
 

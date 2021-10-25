@@ -12,6 +12,7 @@ TagManager:
   - Star
   - Bounce
   - Platform
+  - Lava
   layers:
   - Default
   - TransparentFX
