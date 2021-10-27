@@ -8,7 +8,7 @@ public class StardustCollection : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            StardustPoints.scoreValue ++;
+            StardustPoints.dustValue ++;
             Destroy(this.gameObject);
         }
     }

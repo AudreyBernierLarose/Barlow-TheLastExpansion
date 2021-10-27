@@ -5,18 +5,18 @@ using UnityEngine.UI;
 
 public class StardustPoints : MonoBehaviour
 {
-    public static int scoreValue = 0;
-    Text score;
+    public static int dustValue = 0;
+    Text stardustPoints;
 
     // Start is called before the first frame update
     void Start()
     {
-        score = GetComponent<Text>();
+        stardustPoints = GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        score.text = "" + scoreValue;
+        stardustPoints.text = "X " + dustValue;
     }
 }
