@@ -10,6 +10,9 @@ public class PlayerHP : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private float invisibleDuration = 2.0f;
 
+    [SerializeField] private int damageToDeal;
+    [SerializeField] private float bounceForce;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Enemy")
@@ -48,6 +51,25 @@ public class PlayerHP : MonoBehaviour
         {
             HPScript.hpScore -= HPScript.hpScore;
             Destroy(this.gameObject);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Hurtbox")
+        {
+            if (rBody.velocity.y < 0)
+            {
+                Debug.Log("Y veloicty in the collision method " + rBody.velocity.y);
+                other.gameObject.GetComponent<EnemyHP>().TakeDamage(damageToDeal); //this gets the enemy script
+                rBody.AddForce(transform.up * bounceForce, ForceMode2D.Impulse);
+            }
+            else
+            {
+                SetInvinsibility();
+                Score.scoreValue--;
+                HPScript.hpScore--;
+            }
         }
     }
 

@@ -31,7 +31,7 @@ public class FallenPlatform : MonoBehaviour
     IEnumerator WaitFallenPlatform()
     {
         Debug.Log("In The WaitFallenPlatform Function");
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(1.5f);
         rBody.constraints = ~RigidbodyConstraints2D.FreezePositionY;
         rBody.velocity = new Vector2(transform.position.x, velocity);
 
