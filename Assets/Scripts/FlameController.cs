@@ -11,13 +11,11 @@ public class FlameController : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("In the start Flame controller");
         InvokeRepeating("SpawningStars", time, repeatTime);
     }
 
     void SpawningStars()
     {
-        Debug.Log("In the spawning stars Flame controller");
         Destroy(Instantiate(spawn, new Vector3(x, y, 0), Quaternion.identity), 2.0f);
     }
 
