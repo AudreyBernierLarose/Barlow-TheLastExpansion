@@ -13,6 +13,12 @@ public class Destroyer : MonoBehaviour
             Destroy(other.gameObject);
             StartCoroutine(WaitRespawn());
         }
+
+        if (other.gameObject.tag == "LPlatform")
+        {
+            Destroy(other.gameObject);
+        }
+
     }
 
     IEnumerator WaitRespawn()

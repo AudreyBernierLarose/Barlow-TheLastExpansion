@@ -33,6 +33,9 @@ public class Bounce : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        HPScript.hpScore = 5;
+        StarScript.starPoints = 0;
+        Score.scoreValue = 0;
     }
 
 }

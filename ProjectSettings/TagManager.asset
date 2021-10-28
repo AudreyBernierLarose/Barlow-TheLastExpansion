@@ -15,6 +15,7 @@ TagManager:
   - Lava
   - Death
   - End
+  - LPlatform
   layers:
   - Default
   - TransparentFX
