@@ -15,7 +15,7 @@ public class PlayerHP : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Enemy")
+        /*if (other.gameObject.tag == "Enemy")
         {
             if (HPScript.hpScore >= 1)
             {
@@ -30,7 +30,7 @@ public class PlayerHP : MonoBehaviour
                 rBody.velocity = Vector2.down * 1f; //This is for the flies
                 HPScript.hpScore -= HPScript.hpScore;
             }               
-        }
+        }*/
 
         if (other.gameObject.tag == "Lava")
         {
@@ -58,9 +58,13 @@ public class PlayerHP : MonoBehaviour
     {
         if (other.gameObject.tag == "Hurtbox")
         {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                //Disabling F key
+            }
+
             if (rBody.velocity.y < 0)
             {
-                Debug.Log("Y veloicty in the collision method " + rBody.velocity.y);
                 other.gameObject.GetComponent<EnemyHP>().TakeDamage(damageToDeal); //this gets the enemy script
                 rBody.AddForce(transform.up * bounceForce, ForceMode2D.Impulse);
             }
