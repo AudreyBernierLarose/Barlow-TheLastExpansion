@@ -11,9 +11,14 @@ public class Bounce : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Bounce" && rBody.velocity.y <= 0)
+        if (other.gameObject.tag == "Bounce" && rBody.velocity.y < -1)
         {
+            Debug.Log("Velocity Y" + rBody.velocity.y);
             rBody.AddForce(transform.up * bounceForce, ForceMode2D.Impulse);
+        }
+        else
+        {
+            rBody.AddForce(transform.up * 1, ForceMode2D.Impulse);
         }
 
         if (other.gameObject.tag == "End")
