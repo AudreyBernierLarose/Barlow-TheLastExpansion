@@ -8,12 +8,12 @@ public class Portal : MonoBehaviour
     [SerializeField] private GameObject player;
 
     private Animator anim;
-    private Animation open;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        anim.SetBool("isStationary", true);
     }
 
     public void OnTriggerEnter2D(Collider2D other)

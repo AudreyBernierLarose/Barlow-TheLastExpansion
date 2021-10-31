@@ -14,11 +14,15 @@ public class GlidingTutorial : MonoBehaviour
 
     }
 
+   
     //Setting inactive an object
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
+        {
             instruction.SetActive(false);
+
+        }
 
     }
 

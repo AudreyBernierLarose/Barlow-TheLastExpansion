@@ -4,28 +4,28 @@ using UnityEngine;
 
 public class PortalClosing : MonoBehaviour
 {
-    [SerializeField] private float x, y;
     private Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        anim.SetBool("isStationary", true);
     }
 
     public void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {
-            anim.SetBool("isClosing", true);
-            StartCoroutine(PortalRespawn());
+            anim.SetBool("isStationary", false);
+            StartCoroutine(WaitSeconds());
+            
         }
     }
 
-    IEnumerator PortalRespawn()
+    IEnumerator WaitSeconds()
     {
-        //Still need to fix the portal coming back
-        yield return new WaitForSeconds(1.0f);
-        this.transform.position = new Vector2(x, y);
+        yield return new WaitForSeconds(10.0f);
+        anim.SetBool("isStationary", true);
     }
 }
