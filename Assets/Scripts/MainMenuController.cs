@@ -15,20 +15,32 @@ public class MainMenuController : MonoBehaviour
     }
     public void Next()
     {
+        HPScript.hpScore = 5;
+        Score.scoreValue = 0;
+        StarScript.starPoints = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void LevelThree()
     {
+        HPScript.hpScore = 5;
+        Score.scoreValue = 0;
+        StarScript.starPoints = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
     }
 
     public void Back()
     {
+        HPScript.hpScore = 5;
+        Score.scoreValue = 0;
+        StarScript.starPoints = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     public void Main()
     {
+        HPScript.hpScore = 5;
+        Score.scoreValue = 0;
+        StarScript.starPoints = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - SceneManager.GetActiveScene().buildIndex);
     }
 
