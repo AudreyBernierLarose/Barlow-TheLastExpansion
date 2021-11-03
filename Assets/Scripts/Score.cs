@@ -18,5 +18,11 @@ public class Score : MonoBehaviour
     void Update()
     {
         score.text = "" + scoreValue;
+
+        if (scoreValue == 100)
+        {
+            scoreValue = 0;
+            HPScript.hpScore++;
+        }
     }
 }
