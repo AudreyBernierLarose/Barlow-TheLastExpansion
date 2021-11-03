@@ -20,7 +20,7 @@ public class CameraShake : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player" && cmVCam.isActiveAndEnabled)
+        if ((other.gameObject.tag == "Player" || other.gameObject.tag == "Asteroid") && cmVCam.isActiveAndEnabled)
             cmPerlin.m_AmplitudeGain = intensity;
         else
             cmPerlin.m_AmplitudeGain = intensityStop;

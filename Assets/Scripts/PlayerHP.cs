@@ -52,6 +52,13 @@ public class PlayerHP : MonoBehaviour
             HPScript.hpScore -= HPScript.hpScore;
             Destroy(this.gameObject);
         }
+
+        if (other.gameObject.tag == "Asteroid")
+        {
+            SetInvinsibility();
+            Score.scoreValue--;
+            HPScript.hpScore--;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)

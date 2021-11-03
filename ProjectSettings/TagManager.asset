@@ -16,6 +16,7 @@ TagManager:
   - Death
   - End
   - LPlatform
+  - Asteroid
   layers:
   - Default
   - TransparentFX

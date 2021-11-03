@@ -155,8 +155,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1578648873
+  m_SortingLayer: 1
   m_SortingOrder: 6
   m_Sprite: {fileID: -1940686510328425793, guid: 383c1872876ba8245b58bc6df6219978,
     type: 3}
@@ -216,11 +216,11 @@ GameObject:
   - component: {fileID: 2470942226593578503}
   m_Layer: 0
   m_Name: DamageDealer
-  m_TagString: Enemy
+  m_TagString: Hurtbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1036012139629894113
 Transform:
   m_ObjectHideFlags: 0
