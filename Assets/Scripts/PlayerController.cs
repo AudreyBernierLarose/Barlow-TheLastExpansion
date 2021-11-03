@@ -142,7 +142,7 @@ public class PlayerController : MonoBehaviour
                 rBody.angularDrag = 2f;
                 rBody.gravityScale = 0.3f;
                 rBody.velocity = new Vector2(rBody.velocity.x, -2f);
-                StardustPoints.dustValue--;
+                StardustPoints.dustValue -= 2;
             }
         
     }
@@ -161,7 +161,7 @@ public class PlayerController : MonoBehaviour
             Gliding();
     }
 
-    private void NotGliding()
+    public void NotGliding()
     {
         anim.SetBool("isFloating", false);
         rBody.gravityScale = 3f;

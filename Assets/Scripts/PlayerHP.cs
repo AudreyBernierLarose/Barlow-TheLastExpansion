@@ -19,6 +19,7 @@ public class PlayerHP : MonoBehaviour
         {
             if (HPScript.hpScore >= 1)
             {
+                this.gameObject.GetComponent<PlayerController>().NotGliding();
                 SetInvinsibility();
                 rBody.velocity = Vector2.down * 1f; //This is for the flies
                 Score.scoreValue--;
@@ -36,6 +37,7 @@ public class PlayerHP : MonoBehaviour
         {
             if (HPScript.hpScore >= 1)
             {
+                this.gameObject.GetComponent<PlayerController>().NotGliding();
                 SetInvinsibility();
                 Score.scoreValue--;
                 HPScript.hpScore--;
@@ -49,12 +51,14 @@ public class PlayerHP : MonoBehaviour
 
         if (other.gameObject.tag == "Death")
         {
+            this.gameObject.GetComponent<PlayerController>().NotGliding();
             HPScript.hpScore -= HPScript.hpScore;
             Destroy(this.gameObject);
         }
 
         if (other.gameObject.tag == "Asteroid")
         {
+            this.gameObject.GetComponent<PlayerController>().NotGliding();
             SetInvinsibility();
             Score.scoreValue--;
             HPScript.hpScore--;
@@ -67,6 +71,7 @@ public class PlayerHP : MonoBehaviour
         {
             if (rBody.velocity.y < 0)
             {
+                this.gameObject.GetComponent<PlayerController>().NotGliding();
                 other.gameObject.GetComponent<EnemyHP>().TakeDamage(damageToDeal); //this gets the enemy script
                 rBody.AddForce(transform.up * bounceForce, ForceMode2D.Impulse);
             }

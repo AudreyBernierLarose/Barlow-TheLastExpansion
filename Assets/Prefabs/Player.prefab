@@ -322,6 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d18cbebc7e0ec694caa1ec146ce2e1ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loading: {fileID: 281272146879596150, guid: 44dfc7f3d39260a4d84c9dd95ef33d05, type: 3}
   bounceForce: 30
 --- !u!1 &4460737143865310023
 GameObject:
@@ -347,7 +348,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4460737143865310023}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.89, y: 0, z: 0}
+  m_LocalPosition: {x: 0.87, y: 0.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1879881093131667163}
