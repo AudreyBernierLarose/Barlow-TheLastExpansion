@@ -11,7 +11,6 @@ public class BugSpawner : MonoBehaviour
 
     private float timer = 0.0f;
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         timer += Time.deltaTime;

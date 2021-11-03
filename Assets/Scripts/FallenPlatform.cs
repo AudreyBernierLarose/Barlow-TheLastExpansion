@@ -13,16 +13,13 @@ public class FallenPlatform : MonoBehaviour
     {
         rBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        anim.SetBool("isShaking", false) ;
-
-        
+        anim.SetBool("isShaking", false) ; 
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("In Collision Function");
             anim.SetBool("isShaking", true);
             StartCoroutine(WaitFallenPlatform());
         }
@@ -30,10 +27,8 @@ public class FallenPlatform : MonoBehaviour
 
     IEnumerator WaitFallenPlatform()
     {
-        Debug.Log("In The WaitFallenPlatform Function");
         yield return new WaitForSeconds(1.5f);
         rBody.constraints = ~RigidbodyConstraints2D.FreezePositionY;
         rBody.velocity = new Vector2(transform.position.x, velocity);
-
     }
 }

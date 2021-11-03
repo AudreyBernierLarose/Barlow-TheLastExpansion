@@ -18,8 +18,7 @@ public class PortalClosing : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             anim.SetBool("isStationary", false);
-            StartCoroutine(WaitSeconds());
-            
+            StartCoroutine(WaitSeconds());   
         }
     }
 

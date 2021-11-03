@@ -1,27 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Shooting : MonoBehaviour
 {
     [SerializeField] private GameObject spawn;
     [SerializeField] private Transform firePoint;
-    
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
-        {
-            
-            Shoot();
-        }
+            if(SceneManager.GetActiveScene().name == "The Sanctuary")
+                Shoot();
     }
 
     void Shoot()

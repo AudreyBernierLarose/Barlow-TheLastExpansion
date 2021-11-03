@@ -21,10 +21,4 @@ public class MovingPlatform : MonoBehaviour
     {
         platform.SetActive(false);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

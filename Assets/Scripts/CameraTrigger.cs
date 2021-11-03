@@ -11,15 +11,9 @@ public class CameraTrigger : MonoBehaviour
     [SerializeField] private Collider2D confinerIn;
 
     public VirtualCameraController vCamController;
-
-    public void Start()
-    {
-        
-    }
    
     private void OnTriggerEnter2D(Collider2D other)
     {
-
         if (other.gameObject.tag == "Player")
         {
             vCamController.TransitionTo(cameraToActivate);
@@ -33,7 +27,6 @@ public class CameraTrigger : MonoBehaviour
             vCamController.TransitionTo(cameraOut);
             cameraOut.GetComponent<CinemachineConfiner>().InvalidatePathCache();
             cameraOut.GetComponent<CinemachineConfiner>().m_BoundingShape2D = confinerIn;
-        }
-            
+        }       
     }
 }

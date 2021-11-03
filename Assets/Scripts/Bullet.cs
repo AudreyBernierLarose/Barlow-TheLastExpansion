@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float speed = 20f;
+
     private Rigidbody2D rBody;
 
     // Start is called before the first frame update
@@ -21,11 +22,5 @@ public class Bullet : MonoBehaviour
             other.GetComponent<EnemyHP>().TakeDamage(1);
             Destroy(this.gameObject);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

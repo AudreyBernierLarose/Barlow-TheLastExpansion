@@ -20,8 +20,6 @@ public class Portal : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
             StartCoroutine(Teleportation());
-     
-        
     }
 
     IEnumerator Teleportation()

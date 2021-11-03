@@ -22,10 +22,4 @@ public class StartTrigger : MonoBehaviour
         wall.SetActive(false);
         instructions.SetActive(true);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

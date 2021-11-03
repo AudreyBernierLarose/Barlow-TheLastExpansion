@@ -34,7 +34,6 @@ public class EnemyHP : MonoBehaviour
             anim.SetBool("isDead", true);
             StartCoroutine(WaitDestroy());
         }
-        
     }
 
     public void TakeDamage(int damage)

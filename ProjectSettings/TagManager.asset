@@ -17,6 +17,7 @@ TagManager:
   - End
   - LPlatform
   - Asteroid
+  - Bullet
   layers:
   - Default
   - TransparentFX

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -33,7 +34,7 @@ public class PlayerController : MonoBehaviour
     {
         anim.SetBool("isJumping", isJumping);
         Jump();
-        Gliding();
+        CheckGlidingScene();
     }
 
     private void FixedUpdate()
@@ -129,32 +130,41 @@ public class PlayerController : MonoBehaviour
     private void Gliding()
     {
         if (isGrounded)
-        {
-            anim.SetBool("isFloating", false);
-            rBody.gravityScale = 3f;
-            rBody.angularDrag = 0.05f;
-        }
+            NotGliding();
 
         if (Input.GetKeyDown(KeyCode.F) && !isGrounded && (rBody.velocity.y < 0 || rBody.velocity.y > 0))
-        {
-            if (Input.GetKey(KeyCode.Space))
-            {
-                anim.SetBool("isFloating", false);
-                rBody.gravityScale = 3f;
-                rBody.angularDrag = 0.05f;
-            }
+            if (StardustPoints.dustValue <= 0)
+                NotGliding();
+            
             else 
             {
                 anim.SetBool("isFloating", true);
                 rBody.angularDrag = 2f;
                 rBody.gravityScale = 0.3f;
                 rBody.velocity = new Vector2(rBody.velocity.x, -2f);
+                StardustPoints.dustValue--;
             }
-        }
+        
     }
-
+    //Still need to work on that
     public void Sliding()
     {
         rBody.velocity = new Vector2(speed * 6f, rBody.velocity.y);
+    }
+
+    private void CheckGlidingScene()
+    {
+        if (SceneManager.GetActiveScene().name == "The Portal Escapade")
+            NotGliding();
+        
+        else
+            Gliding();
+    }
+
+    private void NotGliding()
+    {
+        anim.SetBool("isFloating", false);
+        rBody.gravityScale = 3f;
+        rBody.angularDrag = 0.05f;
     }
 }
