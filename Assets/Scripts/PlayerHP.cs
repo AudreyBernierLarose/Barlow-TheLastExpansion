@@ -22,7 +22,7 @@ public class PlayerHP : MonoBehaviour
                 this.gameObject.GetComponent<PlayerController>().NotGliding();
                 SetInvinsibility();
                 rBody.velocity = Vector2.down * 1f; //This is for the flies
-                Score.scoreValue--;
+                Score.scoreValue = Score.scoreValue - 3;
                 HPScript.hpScore--;
             }
             else
@@ -39,7 +39,7 @@ public class PlayerHP : MonoBehaviour
             {
                 this.gameObject.GetComponent<PlayerController>().NotGliding();
                 SetInvinsibility();
-                Score.scoreValue--;
+                Score.scoreValue = Score.scoreValue - 3;
                 HPScript.hpScore--;
             }
             else 
@@ -60,7 +60,7 @@ public class PlayerHP : MonoBehaviour
         {
             this.gameObject.GetComponent<PlayerController>().NotGliding();
             SetInvinsibility();
-            Score.scoreValue--;
+            Score.scoreValue = Score.scoreValue - 3;
             HPScript.hpScore--;
         }
     }
@@ -78,7 +78,7 @@ public class PlayerHP : MonoBehaviour
             else
             {
                 SetInvinsibility();
-                Score.scoreValue--;
+                Score.scoreValue = Score.scoreValue - 3;
                 HPScript.hpScore--;
             }
         }

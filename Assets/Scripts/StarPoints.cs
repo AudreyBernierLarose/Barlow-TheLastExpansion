@@ -9,6 +9,7 @@ public class StarPoints : MonoBehaviour
         if (other.gameObject.tag == "Star" && Input.GetKey(KeyCode.UpArrow))
         {
             StarScript.starPoints++;
+            Score.scoreValue = Score.scoreValue + 5;
             Destroy(other.gameObject);
         }
     }
