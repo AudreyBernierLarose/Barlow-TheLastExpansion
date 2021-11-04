@@ -37,7 +37,6 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("isJumping", isJumping);
         Jump();
         CheckGlidingScene();
-        
     }
 
     private void FixedUpdate()
@@ -46,6 +45,8 @@ public class PlayerController : MonoBehaviour
         isGrounded = GroundCheck();
 
         rBody.velocity = new Vector2(horiz * speed, rBody.velocity.y);
+
+        
 
         //Communicate with the animator
         anim.SetFloat("xVelocity", Mathf.Abs(rBody.velocity.x));

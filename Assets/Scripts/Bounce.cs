@@ -29,14 +29,6 @@ public class Bounce : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Slide" && rBody.transform.rotation.y == 0)
-        {
-            anim.SetBool("isJumping", false);
-        }
-    }
-
     // Start is called before the first frame update
     void Start()
     {
