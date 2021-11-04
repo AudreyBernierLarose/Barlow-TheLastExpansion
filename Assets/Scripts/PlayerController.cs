@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     //private fields
     private Rigidbody2D rBody;
-    private bool isGrounded;
+    private bool isGrounded; 
     private bool isCrouching;
     private Animator anim;
     private bool isJumping;
@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float groundCheckRadius;
     [SerializeField] private Transform groundCheckPos;
     [SerializeField] private LayerMask whatIsGround;
+    [SerializeField] private GameObject infoPanel;
 
 
     // Start is called before the first frame update
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         rBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        infoPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -35,6 +37,7 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("isJumping", isJumping);
         Jump();
         CheckGlidingScene();
+        
     }
 
     private void FixedUpdate()
@@ -57,6 +60,7 @@ public class PlayerController : MonoBehaviour
         Flip();
         Run();
         Crouch();
+        ShowInfo();
     }
 
     private bool GroundCheck()
@@ -146,11 +150,6 @@ public class PlayerController : MonoBehaviour
             }
         
     }
-    //Still need to work on that
-    public void Sliding()
-    {
-        rBody.velocity = new Vector2(speed * 6f, rBody.velocity.y);
-    }
 
     private void CheckGlidingScene()
     {
@@ -166,5 +165,15 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("isFloating", false);
         rBody.gravityScale = 3f;
         rBody.angularDrag = 0.05f;
+    }
+
+    private void ShowInfo()
+    {
+        if (Input.GetButton("Mouse X"))
+            infoPanel.SetActive(true);
+    
+        else
+            infoPanel.SetActive(false);
+        
     }
 }

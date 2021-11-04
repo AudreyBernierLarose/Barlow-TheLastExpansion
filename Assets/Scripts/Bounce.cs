@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public class Bounce : MonoBehaviour
 {
     private Rigidbody2D rBody;
+    private Animator anim;
 
     [SerializeField] private GameObject loading;
-
     [SerializeField] private float bounceForce;
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -29,9 +29,18 @@ public class Bounce : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Slide" && rBody.transform.rotation.y == 0)
+        {
+            anim.SetBool("isJumping", false);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         loading.SetActive(false);
         rBody = GetComponent<Rigidbody2D>();
     }
