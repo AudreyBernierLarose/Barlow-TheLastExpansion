@@ -395,6 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitSound: {fileID: 8300000, guid: 84091a8ecd48cbf458b30a10d7f1db8b, type: 3}
+  killSound: {fileID: 0}
   damageToDeal: 1
   bounceForce: 12
 --- !u!114 &238429012058138121
@@ -409,6 +410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fe062bcb4c333b47b5d64ef232a049e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  starSound: {fileID: 8300000, guid: a52a34ea8af4e314bbbffe356f49b7b3, type: 3}
 --- !u!114 &8194370123708376474
 MonoBehaviour:
   m_ObjectHideFlags: 0

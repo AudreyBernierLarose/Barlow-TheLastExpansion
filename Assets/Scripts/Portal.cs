@@ -19,12 +19,13 @@ public class Portal : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
-            StartCoroutine(Teleportation());
+             StartCoroutine(Teleportation());
     }
 
     IEnumerator Teleportation()
     {
         yield return new WaitForSeconds(1.0f);
+        GetComponent<AudioSource>().Play();
         player.transform.position = new Vector2(portal.transform.position.x, portal.transform.position.y);
     }
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 public class BackgroundScrolling : MonoBehaviour
 {
     public float scrollSpeed;
-
     private Renderer renderer;
 
     // Start is called before the first frame update

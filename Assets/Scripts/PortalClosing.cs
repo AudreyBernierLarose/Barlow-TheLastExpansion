@@ -17,6 +17,7 @@ public class PortalClosing : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            GetComponent<AudioSource>().Play();
             anim.SetBool("isStationary", false);
             StartCoroutine(WaitSeconds());   
         }
@@ -24,7 +25,9 @@ public class PortalClosing : MonoBehaviour
 
     IEnumerator WaitSeconds()
     {
+        this.gameObject.GetComponent<Collider2D>().enabled = false;
         yield return new WaitForSeconds(10.0f);
+        this.gameObject.GetComponent<Collider2D>().enabled = true;
         anim.SetBool("isStationary", true);
     }
 }
