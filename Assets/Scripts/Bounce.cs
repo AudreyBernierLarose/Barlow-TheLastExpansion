@@ -8,6 +8,8 @@ public class Bounce : MonoBehaviour
     private Rigidbody2D rBody;
     private Animator anim;
 
+    [SerializeField] private AudioClip congratClip;
+    [SerializeField] private AudioClip bounceClip;
     [SerializeField] private GameObject loading;
     [SerializeField] private float bounceForce;
 
@@ -15,6 +17,7 @@ public class Bounce : MonoBehaviour
     {
         if (other.gameObject.tag == "Bounce" && rBody.velocity.y < -1)
         {
+            AudioSource.PlayClipAtPoint(bounceClip, new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z - 4f));
             this.gameObject.GetComponent<PlayerController>().NotGliding();
             rBody.AddForce(transform.up * bounceForce, ForceMode2D.Impulse);
         }
@@ -26,6 +29,11 @@ public class Bounce : MonoBehaviour
         if (other.gameObject.tag == "End")
         {
             StartCoroutine(WaitTravel());
+        }
+
+        if (other.gameObject.tag == "TheEnd")
+        {
+            StartCoroutine(WaitCredit());
         }
     }
 
@@ -39,9 +47,21 @@ public class Bounce : MonoBehaviour
 
     IEnumerator WaitTravel()
     {
+        AudioSource.PlayClipAtPoint(congratClip, new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z - 4f));
         loading.SetActive(true);
         yield return new WaitForSeconds(3.0f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        HPScript.hpScore = 5;
+        StarScript.starPoints = 0;
+        Score.scoreValue = 0;
+    }
+
+    IEnumerator WaitCredit()
+    {
+        AudioSource.PlayClipAtPoint(congratClip, new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z - 4f));
+        loading.SetActive(true);
+        yield return new WaitForSeconds(3.0f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - SceneManager.GetActiveScene().buildIndex);
         HPScript.hpScore = 5;
         StarScript.starPoints = 0;
         Score.scoreValue = 0;

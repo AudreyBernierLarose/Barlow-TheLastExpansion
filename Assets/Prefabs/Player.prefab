@@ -423,6 +423,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d18cbebc7e0ec694caa1ec146ce2e1ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  congratClip: {fileID: 8300000, guid: f81292ebf41762148a6584bf94bd564f, type: 3}
+  bounceClip: {fileID: 8300000, guid: 140d157c7d54d944188589245ec7b4f1, type: 3}
   loading: {fileID: 281272146879596150, guid: 44dfc7f3d39260a4d84c9dd95ef33d05, type: 3}
   bounceForce: 30
 --- !u!1 &4460737143865310023

@@ -72,7 +72,7 @@ public class PlayerHP : MonoBehaviour
         {
             if (rBody.velocity.y < 0)
             {
-                AudioSource.PlayClipAtPoint(killSound, new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z));
+                AudioSource.PlayClipAtPoint(killSound, new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z - 2f));
                 this.gameObject.GetComponent<PlayerController>().NotGliding();
                 other.gameObject.GetComponent<EnemyHP>().TakeDamage(damageToDeal); 
                 rBody.AddForce(transform.up * bounceForce, ForceMode2D.Impulse);
@@ -95,7 +95,7 @@ public class PlayerHP : MonoBehaviour
 
     public void SetInvinsibility()
     {
-        AudioSource.PlayClipAtPoint(hitSound, new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z));
+        AudioSource.PlayClipAtPoint(hitSound, new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z -4f));
         StopAllCoroutines();
         invisible = true;
         Invoke("UndoInvinsible", invisibleDuration);
