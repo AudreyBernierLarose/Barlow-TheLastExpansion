@@ -19,7 +19,6 @@ public class Destroyer : MonoBehaviour
         
         if (other.gameObject.tag == "Asteroid")
             Destroy(other.gameObject);
-        
     }
 
     IEnumerator WaitRespawn()

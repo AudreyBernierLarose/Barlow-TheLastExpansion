@@ -14,18 +14,16 @@ public class VirtualCameraController : MonoBehaviour
     {
         virtualCameras.Clear();
         for (int counter = 0; counter < transform.childCount; counter++)
-        {
             virtualCameras.Add(transform.GetChild(counter).gameObject);
-        }
+        
 
         foreach (GameObject g in virtualCameras)
-        {
             if (g.gameObject.name == "Play Cam")
             {
                 g.GetComponent<CinemachineConfiner>().InvalidatePathCache();
                 g.GetComponent<CinemachineConfiner>().m_BoundingShape2D = startContainer;
             }
-        }
+        
     }
 
     public void TransitionTo(GameObject cameraToTransitionTo)

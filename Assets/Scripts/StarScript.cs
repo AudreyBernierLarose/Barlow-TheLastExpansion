@@ -18,5 +18,8 @@ public class StarScript : MonoBehaviour
     void Update()
     {
         starText.text = "X " + starPoints + "/5";
+
+        if (starPoints < 0)
+            starPoints = 0;
     }
 }

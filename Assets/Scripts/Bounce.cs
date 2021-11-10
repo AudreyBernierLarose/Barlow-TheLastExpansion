@@ -27,14 +27,11 @@ public class Bounce : MonoBehaviour
 
 
         if (other.gameObject.tag == "End")
-        {
             StartCoroutine(WaitTravel());
-        }
+        
 
         if (other.gameObject.tag == "TheEnd")
-        {
-            StartCoroutine(WaitCredit());
-        }
+            StartCoroutine(WaitCredit()); 
     }
 
     // Start is called before the first frame update
@@ -51,9 +48,7 @@ public class Bounce : MonoBehaviour
         loading.SetActive(true);
         yield return new WaitForSeconds(3.0f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        HPScript.hpScore = 5;
-        StarScript.starPoints = 0;
-        Score.scoreValue = 0;
+        ResetInfo();
     }
 
     IEnumerator WaitCredit()
@@ -62,6 +57,11 @@ public class Bounce : MonoBehaviour
         loading.SetActive(true);
         yield return new WaitForSeconds(3.0f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - SceneManager.GetActiveScene().buildIndex);
+        ResetInfo();
+    }
+
+    void ResetInfo()
+    {
         HPScript.hpScore = 5;
         StarScript.starPoints = 0;
         Score.scoreValue = 0;

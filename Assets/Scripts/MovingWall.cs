@@ -16,8 +16,7 @@ public class MovingWall : MonoBehaviour
     void Update()
     {
         if (player.transform.position.x < this.transform.position.x)
-        {
             HPScript.hpScore -= HPScript.hpScore;
-        }
+        
     }
 }

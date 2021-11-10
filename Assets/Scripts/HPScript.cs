@@ -18,5 +18,8 @@ public class HPScript : MonoBehaviour
     void Update()
     {
         hpText.text = "X " + hpScore;
+
+        if (hpScore < 0)
+            hpScore = 0;
     }
 }

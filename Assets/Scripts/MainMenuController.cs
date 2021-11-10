@@ -7,40 +7,29 @@ public class MainMenuController : MonoBehaviour
 {
     public void StartGame()
     {
-        HPScript.hpScore = 5;
-        Score.scoreValue = 0;
-        StarScript.starPoints = 0;
-        //Can use this function everytime you wanna go to the next scene
+        ResetInfo();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);   
     }
     public void Next()
     {
-        HPScript.hpScore = 5;
-        Score.scoreValue = 0;
-        StarScript.starPoints = 0;
+        ResetInfo();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void LevelThree()
     {
-        HPScript.hpScore = 5;
-        Score.scoreValue = 0;
-        StarScript.starPoints = 0;
+        ResetInfo();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
     }
 
     public void Back()
     {
-        HPScript.hpScore = 5;
-        Score.scoreValue = 0;
-        StarScript.starPoints = 0;
+        ResetInfo();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     public void Main()
     {
-        HPScript.hpScore = 5;
-        Score.scoreValue = 0;
-        StarScript.starPoints = 0;
+        ResetInfo();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -51,5 +40,12 @@ public class MainMenuController : MonoBehaviour
 #else
             Application.Quit();
 #endif
+    }
+
+    void ResetInfo()
+    {
+        HPScript.hpScore = 5;
+        Score.scoreValue = 0;
+        StarScript.starPoints = 0;
     }
 }

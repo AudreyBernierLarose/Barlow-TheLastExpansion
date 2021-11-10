@@ -21,8 +21,7 @@ public class GameOver : MonoBehaviour
         if (HPScript.hpScore == 0)
         {
             image.enabled = true;
-            StartCoroutine(WaitLoading());
-            
+            StartCoroutine(WaitLoading());   
         }
     }
 

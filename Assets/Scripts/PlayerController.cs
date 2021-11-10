@@ -46,8 +46,6 @@ public class PlayerController : MonoBehaviour
 
         rBody.velocity = new Vector2(horiz * speed, rBody.velocity.y);
 
-        
-
         //Communicate with the animator
         anim.SetFloat("xVelocity", Mathf.Abs(rBody.velocity.x));
         anim.SetFloat("yVelocity", rBody.velocity.y);

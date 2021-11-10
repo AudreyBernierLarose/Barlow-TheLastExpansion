@@ -24,5 +24,8 @@ public class Score : MonoBehaviour
             scoreValue = 0;
             HPScript.hpScore++;
         }
+
+        if (scoreValue < 0)
+            scoreValue = 0;
     }
 }
