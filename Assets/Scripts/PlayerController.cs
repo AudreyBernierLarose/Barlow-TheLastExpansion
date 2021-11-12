@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float horiz = Input.GetAxis("Horizontal");
+        float horiz = Input.GetAxisRaw("Horizontal");
         isGrounded = GroundCheck();
 
         rBody.velocity = new Vector2(horiz * speed, rBody.velocity.y);
