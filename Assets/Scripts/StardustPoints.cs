@@ -18,5 +18,8 @@ public class StardustPoints : MonoBehaviour
     void Update()
     {
         stardustPoints.text = "X " + dustValue;
+
+        if (dustValue < 0)
+            dustValue = 0;
     }
 }

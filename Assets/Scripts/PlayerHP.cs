@@ -9,6 +9,7 @@ public class PlayerHP : MonoBehaviour
     private bool invisible = false;
     private SpriteRenderer spriteRenderer;
     private float invisibleDuration = 2.0f;
+    private Animator anim;
 
     [SerializeField] private AudioClip hitSound, killSound;
     [SerializeField] private int damageToDeal;
@@ -28,7 +29,6 @@ public class PlayerHP : MonoBehaviour
             }
             else
             {
-                //Trigger Death animation here
                 rBody.velocity = Vector2.down * 1f; //This is for the flies
                 HPScript.hpScore -= HPScript.hpScore;
             }               
@@ -45,7 +45,6 @@ public class PlayerHP : MonoBehaviour
             }
             else 
             {
-                //Trigger Death animation here
                 HPScript.hpScore -= HPScript.hpScore;
             }
         }
@@ -91,6 +90,9 @@ public class PlayerHP : MonoBehaviour
     {
         rBody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
+
+        anim.SetBool("isDead", false);
     }
 
     public void SetInvinsibility()
