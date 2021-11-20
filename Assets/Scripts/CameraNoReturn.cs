@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraNoReturn : MonoBehaviour
@@ -18,8 +16,6 @@ public class CameraNoReturn : MonoBehaviour
         {
             otherTrigger.gameObject.GetComponent<CameraTrigger>().enabled = false;
             vCamController.TransitionTo(cameraToActivate);
-
-
         }
     }
 
@@ -28,9 +24,7 @@ public class CameraNoReturn : MonoBehaviour
         if (other.gameObject.tag == "Player" && player.gameObject.GetComponent<Rigidbody2D>().velocity.x < 0)
         {
             otherTrigger.gameObject.GetComponent<CameraTrigger>().enabled = true;
-            vCamController.TransitionTo(cameraOut);
-            
-            
+            vCamController.TransitionTo(cameraOut);  
         }
     }
 }
