@@ -9,6 +9,7 @@ public class CameraTrigger : MonoBehaviour
     [SerializeField] private GameObject cameraToActivate;
     [SerializeField] private GameObject cameraOut;
     //[SerializeField] private Collider2D confinerIn; 
+    
 
     public VirtualCameraController vCamController;
    

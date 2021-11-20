@@ -9,7 +9,8 @@ public class FlameController : MonoBehaviour
     [SerializeField] private float x, y;
     [SerializeField] private float time, repeatTime;
 
-    private void Start()
+
+    void Start()
     {
         InvokeRepeating("SpawningStars", time, repeatTime);
     }

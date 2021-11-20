@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private bool isJumping;
     private float initialSpeed = 4.0f;
     private bool canDoubleJump;
+    private CapsuleCollider2D capsuleColliders2D;
 
     //Serialized fields
     [SerializeField] private float runSpeed;
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
         rBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         infoPanel.SetActive(false);
+        capsuleColliders2D = transform.GetComponent<CapsuleCollider2D>();
     }
 
     // Update is called once per frame
@@ -64,7 +66,15 @@ public class PlayerController : MonoBehaviour
 
     private bool GroundCheck()
     {
-        return Physics2D.OverlapCircle(groundCheckPos.position, groundCheckRadius, whatIsGround);
+        //float extraHeightText = 1f;
+        
+        
+        
+        //RaycastHit2D raycastHit = Physics2D.BoxCast(capsuleColliders2D.bounds.center, capsuleColliders2D.bounds.size, 0f, Vector2.down, extraHeightText, whatIsGround);
+        //return raycastHit.collider != null;
+
+        //Debug.Log("Raycast Bool: " + raycastHit.collider);
+        return Physics2D.OverlapCircle(groundCheckPos.position, groundCheckRadius * 1.15f, whatIsGround);
     }
 
     private void Run()

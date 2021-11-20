@@ -7,30 +7,30 @@ public class MainMenuController : MonoBehaviour
 {
     public void StartGame()
     {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
         ResetInfo();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);   
     }
     public void Next()
     {
-        ResetInfo();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        ResetInfo();
     }
     public void LevelThree()
     {
-        ResetInfo();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
+        ResetInfo();
     }
 
     public void Back()
     {
-        ResetInfo();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        ResetInfo();
     }
 
     public void Main()
     {
-        ResetInfo();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - SceneManager.GetActiveScene().buildIndex);
+        ResetInfo();
     }
 
     public void QuitGame()
@@ -47,5 +47,6 @@ public class MainMenuController : MonoBehaviour
         HPScript.hpScore = 5;
         Score.scoreValue = 0;
         StarScript.starPoints = 0;
+        StardustPoints.dustValue = 0;
     }
 }
