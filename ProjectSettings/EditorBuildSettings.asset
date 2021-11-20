@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/The Sanctuary.unity
     guid: 4eb2230a2c72e0f418a5b1ff632ba60e
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: d403debd5220a034390171ec4456ddca
   m_configObjects: {}

@@ -11,6 +11,7 @@ public class StardustCollection : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(starCollectionSound, new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z - 15f));
             StardustPoints.dustValue ++;
+            Score.scoreValue += 3;
             Destroy(this.gameObject);
         }
     }

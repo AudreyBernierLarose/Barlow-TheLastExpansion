@@ -31,7 +31,7 @@ public class PlayerHP : MonoBehaviour
             {
                 rBody.velocity = Vector2.down * 1f; //This is for the flies
                 HPScript.hpScore -= HPScript.hpScore;
-            }               
+            }
         }
 
         if (other.gameObject.tag == "Lava")
@@ -43,7 +43,7 @@ public class PlayerHP : MonoBehaviour
                 Score.scoreValue = Score.scoreValue - 3;
                 HPScript.hpScore--;
             }
-            else 
+            else
             {
                 HPScript.hpScore -= HPScript.hpScore;
             }
@@ -73,7 +73,7 @@ public class PlayerHP : MonoBehaviour
             {
                 AudioSource.PlayClipAtPoint(killSound, new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z - 2f));
                 this.gameObject.GetComponent<PlayerController>().NotGliding();
-                other.gameObject.GetComponent<EnemyHP>().TakeDamage(damageToDeal); 
+                other.gameObject.GetComponent<EnemyHP>().TakeDamage(damageToDeal);
                 rBody.AddForce(transform.up * bounceForce, ForceMode2D.Impulse);
             }
             else
@@ -97,7 +97,7 @@ public class PlayerHP : MonoBehaviour
 
     public void SetInvinsibility()
     {
-        AudioSource.PlayClipAtPoint(hitSound, new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z -4f));
+        AudioSource.PlayClipAtPoint(hitSound, new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z - 4f));
         StopAllCoroutines();
         invisible = true;
         Invoke("UndoInvinsible", invisibleDuration);

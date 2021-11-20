@@ -23,7 +23,6 @@ public class VirtualCameraController : MonoBehaviour
                 g.GetComponent<CinemachineConfiner>().InvalidatePathCache();
                 g.GetComponent<CinemachineConfiner>().m_BoundingShape2D = startContainer;
             }
-        
     }
 
     public void TransitionTo(GameObject cameraToTransitionTo)

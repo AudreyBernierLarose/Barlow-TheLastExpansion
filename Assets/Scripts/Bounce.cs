@@ -56,7 +56,7 @@ public class Bounce : MonoBehaviour
         AudioSource.PlayClipAtPoint(congratClip, new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z - 4f));
         loading.SetActive(true);
         yield return new WaitForSeconds(3.0f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Credits - Next Scene
         ResetInfo();
     }
 

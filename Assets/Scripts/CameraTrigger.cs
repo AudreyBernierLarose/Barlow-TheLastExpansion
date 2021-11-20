@@ -8,6 +8,7 @@ public class CameraTrigger : MonoBehaviour
     //Serialized Fields
     [SerializeField] private GameObject cameraToActivate;
     [SerializeField] private GameObject cameraOut;
+    //[SerializeField] private Collider2D confinerIn; 
 
     public VirtualCameraController vCamController;
    
@@ -20,6 +21,10 @@ public class CameraTrigger : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
-            vCamController.TransitionTo(cameraOut);         
+        {
+            vCamController.TransitionTo(cameraOut);
+            //cameraOut.GetComponent<CinemachineConfiner>().InvalidatePathCache(); //
+            //cameraOut.GetComponent<CinemachineConfiner>().m_BoundingShape2D = confinerIn; //
+        }
     }
 }

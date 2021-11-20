@@ -19,7 +19,7 @@ public class Score : MonoBehaviour
     {
         score.text = "" + scoreValue;
 
-        if (scoreValue == 100)
+        if (scoreValue > 100)
         {
             scoreValue = 0;
             HPScript.hpScore++;
