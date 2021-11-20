@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TiltingPlatform : MonoBehaviour
@@ -26,7 +24,6 @@ public class TiltingPlatform : MonoBehaviour
         {
             motor.motorSpeed = -10f;
             hinge.motor = motor;
-        }
-        
+        } 
     }
 }

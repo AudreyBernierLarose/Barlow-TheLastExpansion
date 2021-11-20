@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Stomper : MonoBehaviour
@@ -25,7 +24,7 @@ public class Stomper : MonoBehaviour
     {
         if (other.gameObject.tag == "Hurtbox")
         {
-               other.gameObject.GetComponent<EnemyHP>().TakeDamage(damageToDeal); //this gets the enemy script
+               other.gameObject.GetComponent<EnemyHP>().TakeDamage(damageToDeal); //gets the enemy script
                rBody.velocity = new Vector3(rBody.velocity.x, rBody.velocity.y * 0.0f + bounceForce, 0.0f);
         }
     }

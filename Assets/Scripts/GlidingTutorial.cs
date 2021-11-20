@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GlidingTutorial : MonoBehaviour
@@ -11,7 +9,6 @@ public class GlidingTutorial : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
             instruction.SetActive(true);
-
     }
    
     //Setting inactive an object

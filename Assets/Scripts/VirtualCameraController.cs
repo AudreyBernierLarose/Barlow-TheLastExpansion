@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
@@ -15,7 +14,6 @@ public class VirtualCameraController : MonoBehaviour
         virtualCameras.Clear();
         for (int counter = 0; counter < transform.childCount; counter++)
             virtualCameras.Add(transform.GetChild(counter).gameObject);
-        
 
         foreach (GameObject g in virtualCameras)
             if (g.gameObject.name == "Play Cam")

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
@@ -15,7 +13,6 @@ public class CameraShake : MonoBehaviour
     {
         cmPerlin = cmVCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         cmPerlin.m_AmplitudeGain = intensityStop;
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)

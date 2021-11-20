@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -44,7 +43,7 @@ public class Bounce : MonoBehaviour
 
     IEnumerator WaitTravel()
     {
-        Camera.main.GetComponent<AudioSource>().Stop(); //ADDED THIS FOR LOADING SCREEN
+        Camera.main.GetComponent<AudioSource>().Stop(); 
         AudioSource.PlayClipAtPoint(congratClip, new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z - 4f));
         loading.SetActive(true);
         yield return new WaitForSeconds(3.0f);
@@ -54,7 +53,7 @@ public class Bounce : MonoBehaviour
 
     IEnumerator WaitCredit()
     {
-        Camera.main.GetComponent<AudioSource>().Stop();//ADDED THIS FOR LOADING SCREEN
+        Camera.main.GetComponent<AudioSource>().Stop();
         AudioSource.PlayClipAtPoint(congratClip, new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z - 4f));
         loading.SetActive(true);
         yield return new WaitForSeconds(3.0f);

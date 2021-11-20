@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
@@ -66,14 +64,6 @@ public class PlayerController : MonoBehaviour
 
     private bool GroundCheck()
     {
-        //float extraHeightText = 1f;
-        
-        
-        
-        //RaycastHit2D raycastHit = Physics2D.BoxCast(capsuleColliders2D.bounds.center, capsuleColliders2D.bounds.size, 0f, Vector2.down, extraHeightText, whatIsGround);
-        //return raycastHit.collider != null;
-
-        //Debug.Log("Raycast Bool: " + raycastHit.collider);
         return Physics2D.OverlapCircle(groundCheckPos.position, groundCheckRadius * 1.15f, whatIsGround);
     }
 

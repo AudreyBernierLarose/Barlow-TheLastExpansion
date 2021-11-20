@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
@@ -12,6 +10,5 @@ public class MainCameraController : MonoBehaviour
     void Start()
     {
         main.GetComponent<CinemachineBrain>().m_CustomBlends = customBlend;
-
     }
 }
