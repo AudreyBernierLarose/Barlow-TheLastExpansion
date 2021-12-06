@@ -53,8 +53,6 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("isCrouching", isCrouching);
         anim.SetFloat("crouching", Input.GetAxis("Crouch"));
 
-        Debug.Log("Crouch Input get axis" + Input.GetAxis("Crouch"));
-
         //Character movements
         Flip();
         Run();
@@ -64,7 +62,7 @@ public class PlayerController : MonoBehaviour
 
     private bool GroundCheck()
     {
-        return Physics2D.OverlapCircle(groundCheckPos.position, groundCheckRadius * 1.15f, whatIsGround);
+        return Physics2D.OverlapCircle(groundCheckPos.position, groundCheckRadius * 2f, whatIsGround);
     }
 
     private void Run()

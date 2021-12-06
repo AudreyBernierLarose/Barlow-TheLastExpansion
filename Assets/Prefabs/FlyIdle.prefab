@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4162833434039167922}
   - component: {fileID: 6425244799985986494}
   - component: {fileID: 6664350669842506327}
-  - component: {fileID: 223280656790062424}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Hurtbox
@@ -48,8 +47,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.3777494, y: 0.152149}
-  m_Size: {x: 0.8147219, y: 0.07968235}
+  m_Offset: {x: -0.38582408, y: 0.152149}
+  m_Size: {x: 0.69108766, y: 0.07968235}
   m_Direction: 1
 --- !u!114 &4162833434039167922
 MonoBehaviour:
@@ -181,32 +180,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!61 &223280656790062424
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6924965249725797294}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.10531694, y: 0.12134348}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.6519958, y: 0.12541077}
-  m_EdgeRadius: 0
 --- !u!1 &6924965249938904951
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,7 +194,7 @@ GameObject:
   - component: {fileID: 6924965249938904944}
   m_Layer: 0
   m_Name: FlyIdle
-  m_TagString: Hurtbox
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -340,7 +313,7 @@ GameObject:
   - component: {fileID: 2470942226593578503}
   m_Layer: 0
   m_Name: DamageDealer
-  m_TagString: Hurtbox
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -369,9 +342,9 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.09167578, y: -0.16048172}
-  m_Size: {x: 0.3503464, y: 0.3023097}
+  m_Offset: {x: -0.1252129, y: -0.1604817}
+  m_Size: {x: 0.79480416, y: 0.3023097}
   m_Direction: 1

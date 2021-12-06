@@ -65,21 +65,12 @@ public class PlayerHP : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Hurtbox")
+        if (other.gameObject.tag == "Enemy")
         {
-            if (rBody.velocity.y < 0)
-            {
-                AudioSource.PlayClipAtPoint(killSound, new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z - 1f)); 
-                this.gameObject.GetComponent<PlayerController>().NotGliding();
-                other.gameObject.GetComponent<EnemyHP>().TakeDamage(damageToDeal);
-                rBody.AddForce(transform.up * bounceForce, ForceMode2D.Impulse);
-            }
-            else
-            {
-                SetInvinsibility();
-                Score.scoreValue = Score.scoreValue - 3;
-                HPScript.hpScore--;
-            }
+            this.gameObject.GetComponent<PlayerController>().NotGliding();
+            SetInvinsibility();
+            Score.scoreValue = Score.scoreValue - 3;
+            HPScript.hpScore--;
         }
     }
 

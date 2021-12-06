@@ -5,6 +5,7 @@ public class Stomper : MonoBehaviour
 {
     [SerializeField] private int damageToDeal;
     [SerializeField] private float bounceForce;
+    [SerializeField] private AudioClip hitSound, killSound;
 
     private bool invisible = false;
     private SpriteRenderer spriteRenderer;
@@ -24,13 +25,25 @@ public class Stomper : MonoBehaviour
     {
         if (other.gameObject.tag == "Hurtbox")
         {
-               other.gameObject.GetComponent<EnemyHP>().TakeDamage(damageToDeal); //gets the enemy script
-               rBody.velocity = new Vector3(rBody.velocity.x, rBody.velocity.y * 0.0f + bounceForce, 0.0f);
+            AudioSource.PlayClipAtPoint(killSound, new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z - 1f));
+            this.gameObject.GetComponent<PlayerController>().NotGliding();
+            other.gameObject.GetComponent<EnemyHP>().TakeDamage(damageToDeal);
+            rBody.AddForce(transform.up * bounceForce, ForceMode2D.Impulse);
         }
     }
 
+    /*private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Hurtbox")
+        {
+               other.gameObject.GetComponent<EnemyHP>().TakeDamage(damageToDeal); //gets the enemy script
+               rBody.velocity = new Vector3(rBody.velocity.x, rBody.velocity.y * 0.0f + bounceForce, 0.0f);
+        }
+    }*/
+
     public void SetInvinsibility()
     {
+        AudioSource.PlayClipAtPoint(hitSound, new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z - 1f));
         StopAllCoroutines();
         invisible = true;
         Invoke("UndoInvinsible", invisibleDuration);
