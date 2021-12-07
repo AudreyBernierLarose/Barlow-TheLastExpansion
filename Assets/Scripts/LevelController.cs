@@ -25,7 +25,6 @@ public class LevelController : MonoBehaviour
     void Start()
     {
         totalStarQty = GameObject.FindGameObjectsWithTag("Star").Length;
-        Debug.Log("There are : " + totalStarQty + " items");
     }
 
     public int StarQty()

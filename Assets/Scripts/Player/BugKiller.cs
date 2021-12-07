@@ -14,7 +14,6 @@ public class BugKiller : MonoBehaviour
     {
         if (other.gameObject.tag == "Hurtbox" && rBody.velocity.y <= 0)
         {
-            Debug.Log(rBody.velocity.y);
             AudioSource.PlayClipAtPoint(killSound, new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z - 1f));
             this.gameObject.GetComponentInParent<PlayerController>().NotGliding();
             other.gameObject.GetComponent<EnemyHP>().TakeDamage(damageToDeal);

@@ -133,7 +133,7 @@ public class PlayerController : MonoBehaviour
         if (isGrounded)
             NotGliding();
 
-        if (Input.GetKeyDown(KeyCode.F) && !isGrounded && (rBody.velocity.y < 0 || rBody.velocity.y > 0))
+        if (Input.GetKeyDown(KeyCode.F) && !isGrounded && rBody.velocity.y != 0)
             if (StardustPoints.dustValue <= 0)
                 NotGliding();
             
@@ -144,8 +144,7 @@ public class PlayerController : MonoBehaviour
                 rBody.gravityScale = 0.3f;
                 rBody.velocity = new Vector2(rBody.velocity.x, -2f);
                 StardustPoints.dustValue -= 2;
-            }
-        
+            }   
     }
 
     private void CheckGlidingScene()

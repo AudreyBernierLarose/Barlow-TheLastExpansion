@@ -8,6 +8,7 @@ public class PlayerHP : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private float invisibleDuration = 2.0f;
     private Animator anim;
+    private bool canTakeDamage = true;
 
     [SerializeField] private AudioClip hitSound, killSound;
     [SerializeField] private int damageToDeal;
@@ -15,7 +16,7 @@ public class PlayerHP : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (canTakeDamage && other.gameObject.tag == "Enemy")
         {
             if (HPScript.hpScore >= 1)
             {
@@ -24,6 +25,7 @@ public class PlayerHP : MonoBehaviour
                 rBody.velocity = Vector2.down * 1f; //This is for the flies
                 Score.scoreValue = Score.scoreValue - 3;
                 HPScript.hpScore--;
+                StartCoroutine(damageTimer());
             }
             else
             {
@@ -32,7 +34,7 @@ public class PlayerHP : MonoBehaviour
             }
         }
 
-        if (other.gameObject.tag == "Lava")
+        if (canTakeDamage && other.gameObject.tag == "Lava")
         {
             if (HPScript.hpScore >= 1)
             {
@@ -40,6 +42,7 @@ public class PlayerHP : MonoBehaviour
                 SetInvinsibility();
                 Score.scoreValue = Score.scoreValue - 3;
                 HPScript.hpScore--;
+                StartCoroutine(damageTimer());
             }
             else
             {
@@ -47,31 +50,40 @@ public class PlayerHP : MonoBehaviour
             }
         }
 
-        if (other.gameObject.tag == "Death")
+        if (canTakeDamage && other.gameObject.tag == "Death")
         {
             this.gameObject.GetComponent<PlayerController>().NotGliding();
             HPScript.hpScore -= HPScript.hpScore;
             Destroy(this.gameObject);
+            StartCoroutine(damageTimer());
         }
 
-        if (other.gameObject.tag == "Asteroid")
+        if (canTakeDamage && other.gameObject.tag == "Asteroid")
         {
             this.gameObject.GetComponent<PlayerController>().NotGliding();
             SetInvinsibility();
             Score.scoreValue = Score.scoreValue - 3;
             HPScript.hpScore--;
+            StartCoroutine(damageTimer());
         }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (canTakeDamage && other.gameObject.tag == "Enemy")
         {
             this.gameObject.GetComponent<PlayerController>().NotGliding();
             SetInvinsibility();
             Score.scoreValue = Score.scoreValue - 3;
             HPScript.hpScore--;
+            StartCoroutine(damageTimer());
         }
+    }
+
+    IEnumerator damageTimer() {
+        canTakeDamage = false;
+        yield return new WaitForSeconds(1.0f);
+        canTakeDamage = true;
     }
 
     // Start is called before the first frame update
@@ -80,7 +92,6 @@ public class PlayerHP : MonoBehaviour
         rBody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-
         anim.SetBool("isDead", false);
     }
 
