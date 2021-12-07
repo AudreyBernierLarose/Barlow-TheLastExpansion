@@ -19,6 +19,8 @@ public class BugKiller : MonoBehaviour
             other.gameObject.GetComponent<EnemyHP>().TakeDamage(damageToDeal);
             rBody.AddForce(transform.up * bounceForce, ForceMode2D.Impulse);
         }
+        else { 
+        }
     }
 
     // Start is called before the first frame update

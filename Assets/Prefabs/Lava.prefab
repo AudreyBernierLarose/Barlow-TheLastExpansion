@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2457993697306401320}
   - component: {fileID: 2457993697306401322}
   - component: {fileID: 2457993697306401323}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bubbles (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4826,7 +4826,7 @@ GameObject:
   - component: {fileID: 2457993697402723101}
   - component: {fileID: 2457993697402723103}
   - component: {fileID: 2457993697402723102}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lava
   m_TagString: Lava
   m_Icon: {fileID: 0}
@@ -5006,10 +5006,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 3.0558033, y: 2.9113607}
+  m_Offset: {x: 3.0558014, y: 1.5550661}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5020,7 +5020,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 74.43512, y: 2.3453836}
+  m_Size: {x: 74.43512, y: 1.7194047}
   m_EdgeRadius: 0
 --- !u!1 &2457993698594372418
 GameObject:
@@ -5031,7 +5031,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2457993698594372541}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bubbles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5065,7 +5065,7 @@ GameObject:
   - component: {fileID: 2457993698624376074}
   - component: {fileID: 2457993698624376068}
   - component: {fileID: 2457993698624376069}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bubbles
   m_TagString: Untagged
   m_Icon: {fileID: 0}

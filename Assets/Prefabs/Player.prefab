@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3259332538560717995}
   m_Layer: 0
   m_Name: BugKiller
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,8 +45,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.19555242, y: -1.53695}
-  m_Size: {x: 0.85478324, y: 0.5547659}
+  m_Offset: {x: -0.2166553, y: -1.53695}
+  m_Size: {x: 0.7492701, y: 0.5547659}
   m_Direction: 1
 --- !u!114 &3259332538560717995
 MonoBehaviour:
@@ -258,8 +258,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.19555241, y: -0.083819225}
-  m_Size: {x: 0.9460327, y: 3.1769395}
+  m_Offset: {x: -0.21137953, y: -0.097174}
+  m_Size: {x: 0.8088644, y: 3.206349}
   m_Direction: 0
 --- !u!50 &4211806147611666857
 Rigidbody2D:
