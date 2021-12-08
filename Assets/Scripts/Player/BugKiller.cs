@@ -19,7 +19,9 @@ public class BugKiller : MonoBehaviour
             other.gameObject.GetComponent<EnemyHP>().TakeDamage(damageToDeal);
             rBody.AddForce(transform.up * bounceForce, ForceMode2D.Impulse);
         }
-        else { 
+
+        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "Asteroid" || other.gameObject.tag == "Death") {
+            HPScript.hpScore++;
         }
     }
 

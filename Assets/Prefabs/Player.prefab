@@ -63,6 +63,7 @@ MonoBehaviour:
   killSound: {fileID: 8300000, guid: 70414c508cbe9274e9f53070ff311352, type: 3}
   damageToDeal: 1
   bounceForce: 12
+  enemy: {fileID: 6924965249938904951, guid: e27013d516bc4774c94a549ca76eba04, type: 3}
 --- !u!1 &1879881092473460496
 GameObject:
   m_ObjectHideFlags: 0

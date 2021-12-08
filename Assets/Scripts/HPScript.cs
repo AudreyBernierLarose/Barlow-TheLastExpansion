@@ -26,6 +26,6 @@ public class HPScript : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)) 
                 player.GetComponent<Transform>().eulerAngles = new Vector3(0, 0, 0);
             hpScore = 0;
-        }
+        }   
     }
 }

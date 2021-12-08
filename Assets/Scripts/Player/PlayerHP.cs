@@ -8,7 +8,6 @@ public class PlayerHP : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private float invisibleDuration = 2.0f;
     private Animator anim;
-    private bool canTakeDamage = true;
 
     [SerializeField] private AudioClip hitSound, killSound;
     [SerializeField] private int damageToDeal;
@@ -51,13 +50,13 @@ public class PlayerHP : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (canTakeDamage && other.gameObject.CompareTag("Enemy"))
+       
+        if (other.gameObject.CompareTag("Enemy"))
         {
             this.gameObject.GetComponent<PlayerController>().NotGliding();
             SetInvinsibility();
             Score.scoreValue = Score.scoreValue - 3;
             HPScript.hpScore--;
-            StartCoroutine(damageTimer());
         }
          
         if (other.gameObject.tag == "Lava")
@@ -75,12 +74,6 @@ public class PlayerHP : MonoBehaviour
                 HPScript.hpScore -= HPScript.hpScore;
             }
         }
-    }
-
-    IEnumerator damageTimer() {
-        canTakeDamage = false;
-        yield return new WaitForSeconds(1.0f);
-        canTakeDamage = true;
     }
 
     // Start is called before the first frame update

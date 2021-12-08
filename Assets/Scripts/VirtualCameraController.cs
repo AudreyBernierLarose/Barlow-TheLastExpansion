@@ -29,7 +29,6 @@ public class VirtualCameraController : MonoBehaviour
         {
             if (g == cameraToTransitionTo)
             {
-                Debug.Log("In the if g == CameratoTransitionTo");
                 //Transition to that camera
                 g.GetComponent<CinemachineVirtualCamera>().Priority = 10;
             }
