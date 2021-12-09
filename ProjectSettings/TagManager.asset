@@ -19,6 +19,7 @@ TagManager:
   - Asteroid
   - Bullet
   - TheEnd
+  - Spear
   layers:
   - Default
   - TransparentFX

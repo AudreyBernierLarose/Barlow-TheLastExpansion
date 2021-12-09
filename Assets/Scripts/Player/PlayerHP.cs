@@ -74,6 +74,14 @@ public class PlayerHP : MonoBehaviour
                 HPScript.hpScore -= HPScript.hpScore;
             }
         }
+
+        if (other.gameObject.tag == "Spear")
+        {
+            this.gameObject.GetComponent<PlayerController>().NotGliding();
+            SetInvinsibility();
+            Score.scoreValue = Score.scoreValue - 3;
+            HPScript.hpScore--;
+        }
     }
 
     // Start is called before the first frame update

@@ -61,9 +61,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killSound: {fileID: 8300000, guid: 70414c508cbe9274e9f53070ff311352, type: 3}
+  hitSound: {fileID: 8300000, guid: 84091a8ecd48cbf458b30a10d7f1db8b, type: 3}
   damageToDeal: 1
   bounceForce: 12
-  enemy: {fileID: 6924965249938904951, guid: e27013d516bc4774c94a549ca76eba04, type: 3}
 --- !u!1 &1879881092473460496
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,8 +201,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.21137953, y: -0.104659595}
-  m_Size: {x: 0.8088644, y: 3.22132}
+  m_Offset: {x: -0.21137953, y: -0.056526065}
+  m_Size: {x: 0.8088644, y: 3.1250536}
   m_Direction: 0
 --- !u!50 &4211806147611666857
 Rigidbody2D:
